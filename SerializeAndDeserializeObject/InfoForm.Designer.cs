@@ -38,8 +38,6 @@ namespace SerializeAndDeserializeObject
             this.CityL = new System.Windows.Forms.Label();
             this.AdressL = new System.Windows.Forms.Label();
             this.TeenagerCheck = new System.Windows.Forms.CheckBox();
-            this.XMLCheck = new System.Windows.Forms.RadioButton();
-            this.BinaryCheck = new System.Windows.Forms.RadioButton();
             this.SaveB = new System.Windows.Forms.Button();
             this.OpenB = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -122,31 +120,9 @@ namespace SerializeAndDeserializeObject
             this.TeenagerCheck.Text = "Is Teenager?";
             this.TeenagerCheck.UseVisualStyleBackColor = true;
             // 
-            // XMLCheck
-            // 
-            this.XMLCheck.AutoSize = true;
-            this.XMLCheck.Checked = true;
-            this.XMLCheck.Location = new System.Drawing.Point(372, 83);
-            this.XMLCheck.Name = "XMLCheck";
-            this.XMLCheck.Size = new System.Drawing.Size(78, 17);
-            this.XMLCheck.TabIndex = 9;
-            this.XMLCheck.TabStop = true;
-            this.XMLCheck.Text = ".xml Format";
-            this.XMLCheck.UseVisualStyleBackColor = true;
-            // 
-            // BinaryCheck
-            // 
-            this.BinaryCheck.AutoSize = true;
-            this.BinaryCheck.Location = new System.Drawing.Point(370, 147);
-            this.BinaryCheck.Name = "BinaryCheck";
-            this.BinaryCheck.Size = new System.Drawing.Size(77, 17);
-            this.BinaryCheck.TabIndex = 10;
-            this.BinaryCheck.Text = ".bin Format";
-            this.BinaryCheck.UseVisualStyleBackColor = true;
-            // 
             // SaveB
             // 
-            this.SaveB.Location = new System.Drawing.Point(370, 196);
+            this.SaveB.Location = new System.Drawing.Point(86, 356);
             this.SaveB.Name = "SaveB";
             this.SaveB.Size = new System.Drawing.Size(75, 23);
             this.SaveB.TabIndex = 12;
@@ -156,7 +132,7 @@ namespace SerializeAndDeserializeObject
             // 
             // OpenB
             // 
-            this.OpenB.Location = new System.Drawing.Point(451, 196);
+            this.OpenB.Location = new System.Drawing.Point(188, 356);
             this.OpenB.Name = "OpenB";
             this.OpenB.Size = new System.Drawing.Size(75, 23);
             this.OpenB.TabIndex = 13;
@@ -168,11 +144,9 @@ namespace SerializeAndDeserializeObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 391);
+            this.ClientSize = new System.Drawing.Size(362, 411);
             this.Controls.Add(this.OpenB);
             this.Controls.Add(this.SaveB);
-            this.Controls.Add(this.BinaryCheck);
-            this.Controls.Add(this.XMLCheck);
             this.Controls.Add(this.TeenagerCheck);
             this.Controls.Add(this.AdressL);
             this.Controls.Add(this.CityL);
@@ -197,8 +171,6 @@ namespace SerializeAndDeserializeObject
         private System.Windows.Forms.Label LastNameL;
         private System.Windows.Forms.Label CityL;
         private System.Windows.Forms.Label AdressL;
-        private System.Windows.Forms.RadioButton XMLCheck;
-        private System.Windows.Forms.RadioButton BinaryCheck;
         private System.Windows.Forms.Button SaveB;
         public System.Windows.Forms.TextBox AdressInput;
         public System.Windows.Forms.TextBox CityInput;

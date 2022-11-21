@@ -7,10 +7,24 @@ namespace SerializeAndDeserializeObject
 {
     public partial class InfoForm : Form
     {
-        private string _binaryfilename = "PersonInfo.bin";
-        private string _xmlfilename = "PersonInfo.xml";
+        private OpenFileDialog _openfile;
+        private SaveFileDialog _savefile;
         public InfoForm()
         {
+            _openfile = new OpenFileDialog
+            {
+                Title = "Open File",
+                InitialDirectory = @"C:\",
+                Filter = "XML Format (*.xml)|*.xml| Binary Format (*.bin)|*.bin"
+            };
+
+            _savefile = new SaveFileDialog
+            {
+                Title = "Save File",
+                InitialDirectory = @"C:\",
+                Filter = "XML Format (*.xml)|*.xml|Binary Format (*.bin)|*.bin"
+            };
+
             InitializeComponent();
         }
 
@@ -37,14 +51,16 @@ namespace SerializeAndDeserializeObject
                     throw new EmtyFieldException();
                 }
 
-                if (BinaryCheck.Checked == true)
-                {
-                    FileMenager.BinarySave(_binaryfilename, person);
-                }
+                _savefile.ShowDialog();
 
-                if (XMLCheck.Checked == true)
+                switch (_savefile.FilterIndex)
                 {
-                    FileMenager.XMLSave(_xmlfilename, person);
+                    case 1:
+                        FileMenager.XMLSave(_savefile.FileName, person);
+                        break;
+                    case 2:
+                        FileMenager.BinarySave(_savefile.FileName, person);
+                        break;
                 }
             }
             catch(EmtyFieldException emty)
@@ -56,18 +72,18 @@ namespace SerializeAndDeserializeObject
         private void OpenFile(object sender, MouseEventArgs e)
         {
             Person person = null;
+            _openfile.ShowDialog();
 
             try
             {
-
-                if (BinaryCheck.Checked == true)
+                switch (_openfile.FilterIndex)
                 {
-                    person = FileMenager.BinaryOpen(_binaryfilename);
-                }
-
-                if (XMLCheck.Checked == true)
-                {
-                    person = FileMenager.XMLOpen(_xmlfilename);
+                    case 1:
+                        person = FileMenager.XMLOpen(_openfile.FileName);
+                        break;
+                    case 2:
+                        person = FileMenager.BinaryOpen(_openfile.FileName);
+                        break;
                 }
 
                 FirstNameInput.Text = person.FirstName;

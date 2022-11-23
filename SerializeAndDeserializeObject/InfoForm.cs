@@ -40,6 +40,7 @@ namespace SerializeAndDeserializeObject
                     LivingAdress = AdressInput.Text
 
                 },
+
                 IsTeenager = TeenagerCheck.Checked
             };
 
@@ -58,11 +59,13 @@ namespace SerializeAndDeserializeObject
                     case 1:
                         FileMenager.XMLSave(_savefile.FileName, person);
                         break;
+
                     case 2:
                         FileMenager.BinarySave(_savefile.FileName, person);
                         break;
                 }
             }
+
             catch(EmtyFieldException emty)
             {
                 emty.EmtyField();
@@ -81,6 +84,7 @@ namespace SerializeAndDeserializeObject
                     case 1:
                         person = FileMenager.XMLOpen(_openfile.FileName);
                         break;
+
                     case 2:
                         person = FileMenager.BinaryOpen(_openfile.FileName);
                         break;
@@ -92,6 +96,7 @@ namespace SerializeAndDeserializeObject
                 CityInput.Text = person.adress.City;
                 TeenagerCheck.Checked = person.IsTeenager;
             }
+
             catch(NullReferenceException ex)
             {
                 MessageBox.Show(ex.Message, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);

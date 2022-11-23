@@ -25,6 +25,7 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                     xml.Serialize(filestream, person);
                 }
             }
+
             catch(ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -45,10 +46,12 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                     person = (Person)xml.Deserialize(filestream);
                 }
             }
+
             catch (FileNotFoundException)
             {
                 MessageBox.Show(_errorstring, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             catch(ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,6 +72,7 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                     formatter.Serialize(filestream, person);
                 }
             }
+
             catch(ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,10 +92,12 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                     person = (Person)formatter.Deserialize(filestream);
                 }
             }
+
             catch(FileNotFoundException)
             {
                 MessageBox.Show(_errorstring, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             catch(ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);

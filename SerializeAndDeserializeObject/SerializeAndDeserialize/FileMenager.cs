@@ -26,7 +26,7 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                 }
             }
 
-            catch(ArgumentException)
+            catch (ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -52,7 +52,7 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                 MessageBox.Show(_errorstring, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            catch(ArgumentException)
+            catch (ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -73,7 +73,7 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                 }
             }
 
-            catch(ArgumentException)
+            catch (ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -93,12 +93,12 @@ namespace SerializeAndDeserializeObject.SerializeAndDeserialize
                 }
             }
 
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 MessageBox.Show(_errorstring, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            catch(ArgumentException)
+            catch (ArgumentException)
             {
                 MessageBox.Show(_errorstring2, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

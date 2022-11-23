@@ -66,7 +66,7 @@ namespace SerializeAndDeserializeObject
                 }
             }
 
-            catch(EmtyFieldException emty)
+            catch (EmtyFieldException emty)
             {
                 emty.EmtyField();
             }
@@ -97,7 +97,7 @@ namespace SerializeAndDeserializeObject
                 TeenagerCheck.Checked = person.IsTeenager;
             }
 
-            catch(NullReferenceException ex)
+            catch (NullReferenceException ex)
             {
                 MessageBox.Show(ex.Message, ErrorTitle.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
